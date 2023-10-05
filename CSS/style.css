@@ -1,0 +1,40 @@
+h1{
+    background-color: rgb(0, 221, 255);
+    color: blue;
+    text-align: center;
+}
+
+p{
+    color: blue; 
+}
+
+#luzGas{
+    float: left;
+}
+#aguaBasura{
+    float: left;
+}
+#internet{
+    float: left;
+}
+#tlf{
+    float: left;
+}
+#hipoteca{
+    float: left;
+}
+#seguros{
+    float: left;
+}
+#comida{
+    float: left;
+}
+#gasolina{
+    float: left;
+}
+#colegio{
+    float: left;
+}
+#ocio{
+    float: left;
+}
