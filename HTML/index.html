@@ -8,60 +8,79 @@
     <title>Document</title>
   </head>
   <body>
+    
     <h1>ECONOMIA DOMESTICA</h1>
 
-    <div id="superior">
+    <div id="cajaGastos">
 
-      <div id="luzGas">
-        <img src="../img/luz.png" alt="luz y gas" onclick="" />
+      <div class="gastos">
+        <img src="../img/luz.png" alt="luz y gas" id="luzgas" onclick="gastos(150)" />
         <p>LUZ y GAS</p>
+        <p>150</p>
       </div>
 
-      <div id="aguaBasura">
-        <img src="../img/basuras.png" alt="agua y basura" />
+      <div class="gastos">
+        <img src="../img/basuras.png" alt="agua y basura" id="basuras" onclick="gastos(20)"/>
         <p>AGUA y BASURA</p>
+        <p>20</p>
       </div>
 
-      <div id="internet">
-        <img src="../img/internet.png" alt="internet" />
+      <div class="gastos">
+        <img src="../img/internet.png" alt="internet" id="internet" onclick="gastos(40)"/>
         <p>INTERNET</p>
+        <p>40</p>
       </div>
 
-      <div id="tlf">
-        <img src="../img/telefono.png" alt="tlf" />
+      <div class="gastos">
+        <img src="../img/telefono.png" alt="tlf" id="tlf" onclick="gastos(65)"/>
         <p>TELEFONO</p>
+        <p>65</p>
       </div>
 
-      <div id="hipoteca">
-        <img src="../img/hipoteca.png" alt="hipoteca" />
+      <div class="gastos">
+        <img src="../img/hipoteca.png" alt="hipoteca" id="hipoteca" onclick="gastos(800)"/>
         <p>HIPOTECA</p>
+        <p>800</p>
       </div>
+
+      <div class="gastos">
+        <img src="../img/seguro.png" alt="seguros" id="seguro" onclick="gastos(15)"/>
+        <p>SEGUROS</p>
+        <p>15</p>
+      </div>
+
+      <div class="gastos">
+        <img src="../img/comida.png" alt="comida" id="comida" onclick="gastos(100)"/>
+        <p>COMIDA</p>
+        <p>100</p>
+      </div>
+
+      <div class="gastos">
+        <img src="../img/gasolina.png" alt="gasolina" id="gasolina" onclick="gastos(70)"/>
+        <p>GASOLINA</p>
+        <p>70</p>
+      </div>
+
+      <div class="gastos">
+        <img src="../img/colegio.png" alt="colegio" id="colegio" onclick="gastos(365)"/>
+        <p>COLEGIO</p>
+        <p>365</p>
+      </div>
+
+      <div class="gastos">
+        <img src="../img/ocio.png" alt="ocio" id="ocio" onclick="gastos(35)"/>
+        <p>OCIO</p>
+        <p>35</p>
+      </div>
+
+    </div>
+
+    <div id="cajaCierre">
+
+      <input type="button" value="Cierra mes" id="cierre" onclick="cierreMes()" />
+
+      <p id="gastototal"></p>
       
-    </div>
-
-    <div id="seguros">
-      <img src="../img/seguro.png" alt="seguros" />
-      <p>SEGUROS</p>
-    </div>
-
-    <div id="comida">
-      <img src="../img/comida.png" alt="comida" />
-      <p>COMIDA</p>
-    </div>
-
-    <div id="gasolina">
-      <img src="../img/gasolina.png" alt="gasolina" />
-      <p>GASOLINA</p>
-    </div>
-
-    <div id="colegio">
-      <img src="../img/colegio.png" alt="colegio" />
-      <p>COLEGIO</p>
-    </div>
-
-    <div id="ocio">
-      <img src="../img/ocio.png" alt="" />
-      <p>OCIO</p>
     </div>
   </body>
 </html>
