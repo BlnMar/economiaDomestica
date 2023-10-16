@@ -5,7 +5,7 @@ h1{
 }
 
 
-p{
+p,ul{
     color: blue;
     font-weight: bold;
 }

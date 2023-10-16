@@ -1,88 +1,98 @@
 var arrayImportes = [];
-
-var arrayConceptos = []; //contar importe e imprimir su string
-
-var contador = 0;
+var arrayConceptos = []; 
+var arrayContador = [0,0,0,0,0,0,0,0,0,0];
 
 function gastos(importe) {
-  //vaciar el marcador al pulsar gasto nuevo mes
-  let gastototal = document.getElementById("gastototal");
-  gastototal.innerHTML = "";
 
-  arrayImportes.push(importe);
-  console.log(arrayImportes);
+  gastoTotal.innerHTML = ""; //vaciar el marcador al pulsar gasto nuevo mes
+  listaNombres.innerHTML = "";
 
+  arrayImportes.push(importe);// forma de rellener el arrayImportes
+  
+ // en cada condicional añade el concepto en el arrayConceptos 
   if (importe == 150) {
     arrayConceptos.push("Luz y gas");
-    //añadirConcepto(); mal, imprime con cada gasto, no al final
-    contador++;
+    arrayContador[0]++;
   } else if (importe == 20) {
     arrayConceptos.push("Agua y basura");
-    contador++;
+    arrayContador[1]++;
   } else if (importe == 40) {
     arrayConceptos.push("Internet");
-    contador++;
+    arrayContador[2]++;
   } else if (importe == 65) {
     arrayConceptos.push("Telefono");
-    contador++;
+    arrayContador[3]++;
   } else if (importe == 800) {
     arrayConceptos.push("Hipoteca");
-    contador++;
+    arrayContador[4]++;
   } else if (importe == 15) {
     arrayConceptos.push("Seguros");
-    contador++;
+    arrayContador[5]++;
   } else if (importe == 100) {
     arrayConceptos.push("Comida");
-    contador++;
+    arrayContador[6]++;
   } else if (importe == 70) {
     arrayConceptos.push("Gasolina");
-    contador++;
+    arrayContador[7]++;
   } else if (importe == 365) {
     arrayConceptos.push("Colegio");
-    contador++;
+    arrayContador[8]++;
   } else if (importe == 35) {
     arrayConceptos.push("Ocio");
-    contador++;
+    arrayContador[9]++;
   }
-
+  console.log(arrayImportes);
   console.log(arrayConceptos);
+  console.log(arrayContador);
 }
-
-/*function añadirConcepto(params) {
-  let listaNombres = document.getElementById("listaNombres");
-  listaNombres.innerHTML = ""; // Limpiar la lista
-
-  for (let i = 0; i < arrayConceptos.length; i++) {
-    let conceptolista = document.createElement("li");
-    conceptolista.textContent = arrayConceptos[i];
-    listaNombres.appendChild(conceptolista);
-  }
-}*/
 
 function cierreMes() {
 
- /*   let conceptos;
-    for(let i=0;i<arrayConceptos.length;i++){
-        conceptos+= arrayConceptos[i];
+  let lista = document.getElementById("listaNombres");//en esta variable guardamos el elemento
+
+  for (let i = 0; i < arrayContador.length; i++) {
+    let contador = arrayContador[i];
+
+    if (contador !== 0) {
+      let concepto = arrayConceptos[i];
+      let elementoLi = document.createElement("li");
+      elementoLi.textContent = concepto + "--- " + contador;
+      lista.appendChild(elementoLi);
     }
-
-    let listaNombres = document.getElementById("listaNombres");
-    listaNombres.innerHTML=listaNombres;*/
-    
-
+  }
+  
   let sumaGastos = 0;
   for (let i = 0; i < arrayImportes.length; i++) {
     sumaGastos += arrayImportes[i];
   }
-  console.log(sumaGastos);
+  let gastoTotal = document.getElementById("gastoTotal");
+  gastoTotal.innerHTML = "Gasto final: " + sumaGastos;
 
-  let gastototal = document.getElementById("gastototal");
-  gastototal.innerHTML = "Gasto final: " + sumaGastos;
 
-  /*el ultimo paso es que el array quede vacio*/
+  /*dividir sumaGastos entre numero de pulsaciones, cogiendo el array contador
+  y sumando el contenido */
+    let calculoMedia = 0;
+  for (let i = 0; i < arrayImportes.length; i++) {
+    calculoMedia /= arrayImportes[i];
+  }
+  let gastoMedio = document.getElementById("gastoMedio");
+  gastoMedio.innerHTML = "Gasto medio: " + calculoMedia;
+
+
+
+  //el ultimo paso es que los arrays queden vacios
   arrayImportes.splice(0, arrayImportes.length);
-  console.log(arrayImportes);
-
   arrayConceptos.splice(0, arrayConceptos.length);
+ // arrayContador.splice(0, arrayContador.length); no valido xq elimina TODO
+  
+  function vaciarArray(arrayContador) { // mantiene posiciones, pero vacias
+    for (let i = 0; i < arrayContador.length; i++) {
+      arrayContador[i] = 0;
+    }
+  }
+  vaciarArray(arrayContador);
+
   console.log(arrayConceptos);
+  console.log(arrayImportes);
+  console.log(arrayContador);
 }
